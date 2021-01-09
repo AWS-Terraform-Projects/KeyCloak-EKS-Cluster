@@ -1,12 +1,12 @@
 # An Template Repository using GitHub Actions and Terraform
 ![ProjectType](https://img.shields.io/badge/project--type-terraform--template-success)![uses](https://img.shields.io/badge/uses-github--actions-success)![uses](https://img.shields.io/badge/uses-terraform-success)![uses](https://img.shields.io/badge/uses-aws--cli-success)![Terraform](https://github.com/AWS-Terraform-Projects/keyCloak-eks-cluster/workflows/Terraform/badge.svg)
-> A template repository for provisioning AWS resources using Terraform. The template supports both Terraform Cloud or AWS S3 to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
->
-> Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-template/wiki) for detailed instructions on using this template repository
 
-##### Create a new repository using this repository as a template. Click on the `Use this template` button as shown below
-  
-  <kbd><img src="./documentation/use-terraform-template.png" /></kbd>
+![status](https://img.shields.io/badge/project--status-work--in--pgoress-informational)
+
+> A Terraform project for provisioning a Keycloak EKS cluster on AWS. 
+>
+> This project was created using a Terrform template repository Please see this [wiki page](https://github.com/AWS-Terraform-Projects/terraform-template/wiki) for detailed instructions on using use the template repository
+
   
 ### Installing and running this project
 <details>

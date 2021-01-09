@@ -9,3 +9,8 @@ variable "http_api_gateway_name" {
 variable "http_api_gateway_description" {
   description = "Http Gateway for the Blog Service API"
 }
+
+variable "create_cluster" {
+  description = "Toggle yes/no to create the eks cluster"
+  default = "no"
+}
