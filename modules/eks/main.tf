@@ -3,7 +3,7 @@ module "eks_cluster" {
   cluster_name    = var.cluster_name
   cluster_version = "1.17"
   subnets         = var.private_subnets
-  count = var.create_cluster == "yes" ? 1 : 0
+  create_eks = var.create_cluster == "yes" ? true : false
 
   tags = {
     Environment = "training"
@@ -31,17 +31,19 @@ module "eks_cluster" {
   ]
 }
 
-#provider "kubernetes" {
-#  load_config_file       = "false"
-#  host                   = try(data.aws_eks_cluster.cluster.endpoint,null)
-#  token                  = try(data.aws_eks_cluster_auth.cluster.token,null)
-#  cluster_ca_certificate = try(base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data),null)
-#}
+provider "kubernetes" {
+  load_config_file       = "false"
+  host                   = element(concat(data.aws_eks_cluster.cluster[*].endpoint, list("")), 0)
+  token                  = element(concat(data.aws_eks_cluster_auth.cluster[*].token, list("")), 0)
+  cluster_ca_certificate = base64decode(element(concat(data.aws_eks_cluster.cluster[*].certificate_authority.0.data, list("")), 0))
+}
 
 data "aws_eks_cluster" "cluster" {
-  name = module.eks_cluster.0.cluster_id
+  count = var.create_cluster == "yes" ? 1 : 0
+  name = module.eks_cluster.cluster_id
 }
 
 data "aws_eks_cluster_auth" "cluster" {
-  name = module.eks_cluster.0.cluster_id
+  count = var.create_cluster == "yes" ? 1 : 0
+  name = module.eks_cluster.cluster_id
 }
