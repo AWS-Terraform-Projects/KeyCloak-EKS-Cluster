@@ -1,2 +1,2 @@
-workspaces { name = "Name of your terraform cloud workspace" }
-organization = "Name of your terraform cloud organization"
+workspaces { name = "aws-keycloak-eks-cluster" }
+organization = "AWS-Terraform-Projects"
