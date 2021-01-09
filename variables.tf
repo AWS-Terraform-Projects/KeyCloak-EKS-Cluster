@@ -2,15 +2,12 @@ variable "aws_region" {
   description = "AWS region this api gateway needs to be deployed"
 }
 
-variable "http_api_gateway_name" {
-  description = "Name of the HTTP Api Gateway"
-}
-
-variable "http_api_gateway_description" {
-  description = "Http Gateway for the Blog Service API"
-}
-
 variable "create_cluster" {
   description = "Toggle yes/no to create the eks cluster"
-  default = "no"
+  default = "yes"
+}
+
+variable "cluster_name" {
+  description = "Set the cluster name"
+  default = "demo"
 }
