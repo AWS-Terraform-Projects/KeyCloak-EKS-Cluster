@@ -11,6 +11,6 @@
 #
 #    terraform init -backend-config=backend_s3.hcl
 #
-bucket = "S3 bucket name" 
-key    = "Path to the terraform.tfstate"
-region = "AWS region where this bucket is located"
+bucket = "github-terraform-deployments" 
+key    = "keycloak-eks-cluster/terraform.tfstate"
+region = "us-east-2"
