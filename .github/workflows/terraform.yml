@@ -93,5 +93,7 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/master' && github.event_name == 'push' && CREATE_CLUSTER
       run: terraform apply -auto-approve
+
+    - name: Terraform Destroy
       if: github.ref == 'refs/heads/master' && github.event_name == 'push' && !CREATE_CLUSTER
       run: terraform destroy -auto-approve
