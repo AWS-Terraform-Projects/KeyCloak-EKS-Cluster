@@ -56,13 +56,12 @@ module "vpc" {
 }
 
 # Create the eks cluster
-module "eks" {
-  source                                   = "./modules/eks"
-  create_cluster                           = var.create_cluster
-  aws_security_group_worker_group_mgmt_one = module.vpc.aws_security_group_worker_group_mgmt_one
-  aws_security_group_worker_group_mgmt_two = module.vpc.aws_security_group_worker_group_mgmt_two
-  vpc_id                                   = module.vpc.vpc_id
-  private_subnets                          = module.vpc.private_subnets
-  cluster_name                             = local.cluster_name
-  #count = var.create_cluster == "yes" ? 1 : 0
-}
+#module "eks" {
+#  source                                   = "./modules/eks"
+#  create_cluster                           = var.create_cluster
+#  aws_security_group_worker_group_mgmt_one = module.vpc.aws_security_group_worker_group_mgmt_one
+#  aws_security_group_worker_group_mgmt_two = module.vpc.aws_security_group_worker_group_mgmt_two
+#  vpc_id                                   = module.vpc.vpc_id
+#  private_subnets                          = module.vpc.private_subnets
+#  cluster_name                             = local.cluster_name
+#}
