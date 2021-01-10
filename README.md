@@ -5,7 +5,7 @@
 
 > A Terraform project for provisioning a Keycloak EKS cluster on AWS. 
 >
-> This project was created using a Terrform template repository Please see this [wiki page](https://github.com/AWS-Terraform-Projects/terraform-template/wiki) for detailed instructions on using use the template repository
+> This project was created using a Terrform template repository Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-eks-template/wiki) for detailed instructions on using use the template repository
 
   
 ### Installing and running this project
