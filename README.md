@@ -7,7 +7,11 @@
 >
 > This project was created using a Terrform template repository Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-eks-template/wiki) for detailed instructions on using use the template repository
 
+ ## Use this template repository
+Create a new GitHub repository by using this template repository. Click on the **Use this template** button as shown below
   
+<kbd>![](https://github.com/AWS-Terraform-Projects/terraform-eks-template/blob/master/documentation/Terraform-EKS-Template.png)</kbd>
+
 ### Installing and running this project
 <details>
   <summary>Prerequisites for running this project</summary>
@@ -21,7 +25,7 @@
   <summary>Initialize and run this project</summary>
   <BR>
   
-Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-template/wiki) for detailed instructions on using this template repository
+Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-eks-template/wiki) for detailed instructions on using this template repository
  
 </details>
 
