@@ -4,7 +4,7 @@ variable "aws_region" {
 
 variable "create_cluster" {
   description = "Toggle yes/no to create the eks cluster"
-  default     = "yes"
+  default     = "no"
 }
 
 variable "cluster_name" {
