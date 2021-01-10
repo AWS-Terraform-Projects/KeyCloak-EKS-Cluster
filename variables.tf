@@ -4,12 +4,17 @@ variable "aws_region" {
 
 variable "create_cluster" {
   description = "Toggle yes/no to create the eks cluster"
-  default     = "no"
+  default     = "yes"
 }
 
 variable "cluster_name" {
   description = "Set the cluster name"
   default     = "demo"
+}
+
+variable "cluster_version" {
+  description = ""
+  default     = "1.18"
 }
 
 variable "vpc_name" {

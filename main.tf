@@ -9,6 +9,9 @@ terraform {
     aws = {
       version = ">= 2.28.1"
     }
+    kubernetes = {
+      version = ">= 1.13.3"
+    }
   }
 }
 
@@ -56,12 +59,13 @@ module "vpc" {
 }
 
 # Create the eks cluster
-#module "eks" {
-#  source                                   = "./modules/eks"
-#  create_cluster                           = var.create_cluster
-#  aws_security_group_worker_group_mgmt_one = module.vpc.aws_security_group_worker_group_mgmt_one
-#  aws_security_group_worker_group_mgmt_two = module.vpc.aws_security_group_worker_group_mgmt_two
-#  vpc_id                                   = module.vpc.vpc_id
-#  private_subnets                          = module.vpc.private_subnets
-#  cluster_name                             = local.cluster_name
-#}
+module "eks" {
+  source                                   = "./modules/eks"
+  create_cluster                           = var.create_cluster
+  aws_security_group_worker_group_mgmt_one = module.vpc.0.aws_security_group_worker_group_mgmt_one
+  aws_security_group_worker_group_mgmt_two = module.vpc.0.aws_security_group_worker_group_mgmt_two
+  vpc_id                                   = module.vpc.0.vpc_id
+  private_subnets                          = module.vpc.0.private_subnets
+  cluster_name                             = local.cluster_name
+  cluster_version                          = var.cluster_version
+}

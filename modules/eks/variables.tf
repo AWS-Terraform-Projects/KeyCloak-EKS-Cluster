@@ -21,3 +21,7 @@ variable "private_subnets" {
 variable "cluster_name" {
   description = ""
 }
+
+variable "cluster_version" {
+  description = ""
+}
