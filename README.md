@@ -3,9 +3,9 @@
 
 ![status](https://img.shields.io/badge/project--status-work--in--pgoress-informational)
 
-> A Terraform project for provisioning a Keycloak EKS cluster on AWS. 
+> A Terraform project for provisioning a EKS cluster on AWS. 
 >
-> This project was created using a Terrform template repository Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-eks-template/wiki) for detailed instructions on using use the template repository
+> Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-eks-template/wiki) for detailed instructions on using use the template repository
 
  ## Use this template repository
 Create a new GitHub repository by using this template repository. Click on the **Use this template** button as shown below
