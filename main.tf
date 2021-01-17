@@ -1,9 +1,9 @@
 terraform {
   # To use S3 as the remote backend, comment out the below line
-  backend "remote" {}
+  #backend "remote" {}
 
   # To use S3 as the backend, uncomment the below line
-  #backend "s3" {}
+  backend "s3" {}
 
   required_providers {
     aws = {
@@ -40,17 +40,15 @@ module "vpc" {
   worker_group_mgmt_one_cidr = var.worker_group_mgmt_one_cidr
   worker_group_mgmt_two_cidr = var.worker_group_mgmt_two_cidr
   worker_group_mgmt_all_cidr = var.worker_group_mgmt_all_cidr
-  count                      = var.create_cluster == "yes" ? 1 : 0
 }
 
 # Create the eks cluster
 module "eks" {
   source                                   = "./modules/eks"
-  create_cluster                           = var.create_cluster
-  aws_security_group_worker_group_mgmt_one = module.vpc.0.aws_security_group_worker_group_mgmt_one
-  aws_security_group_worker_group_mgmt_two = module.vpc.0.aws_security_group_worker_group_mgmt_two
-  vpc_id                                   = module.vpc.0.vpc_id
-  private_subnets                          = module.vpc.0.private_subnets
+  aws_security_group_worker_group_mgmt_one = module.vpc.aws_security_group_worker_group_mgmt_one
+  aws_security_group_worker_group_mgmt_two = module.vpc.aws_security_group_worker_group_mgmt_two
+  vpc_id                                   = module.vpc.vpc_id
+  private_subnets                          = module.vpc.private_subnets
   cluster_name                             = local.cluster_name
   cluster_version                          = var.cluster_version
 }

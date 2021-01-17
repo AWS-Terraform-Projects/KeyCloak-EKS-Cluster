@@ -1,10 +1,8 @@
-module "eks_cluster" {
+  module "eks_cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
   subnets         = var.private_subnets
-  manage_aws_auth = false
-  create_eks      = var.create_cluster == "yes" ? true : false
 
   tags = {
     Environment = "training"
@@ -40,11 +38,9 @@ provider "kubernetes" {
 }
 
 data "aws_eks_cluster" "cluster" {
-  count = var.create_cluster == "yes" ? 1 : 0
   name  = module.eks_cluster.cluster_id
 }
 
 data "aws_eks_cluster_auth" "cluster" {
-  count = var.create_cluster == "yes" ? 1 : 0
   name  = module.eks_cluster.cluster_id
 }
