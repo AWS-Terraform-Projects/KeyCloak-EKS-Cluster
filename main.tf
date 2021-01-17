@@ -1,9 +1,9 @@
 terraform {
   # To use S3 as the remote backend, comment out the below line
-  #backend "remote" {}
+  backend "remote" {}
 
   # To use S3 as the backend, uncomment the below line
-  backend "s3" {}
+  #backend "s3" {}
 
   required_providers {
     aws = {
